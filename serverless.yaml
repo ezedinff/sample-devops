@@ -1,0 +1,32 @@
+service: core-api
+
+provider:
+  name: aws
+  runtime: nodejs16.x
+  region: us-east-1
+
+
+plugins:
+  - serverless-jetpack
+  - serverless-offline
+ 
+package:
+  exclude:
+    - .git/**
+    - apps/**
+    - libs/**
+    - deployment/**
+    - README.md
+
+functions:
+  core-api:
+    handler: dist/apps/core/lambda.handler
+    events:
+      - http:
+          cors: true
+          method: ANY
+          path: /
+      - http:
+          cors: true
+          method: ANY
+          path: '{proxy+}'
