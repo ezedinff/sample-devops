@@ -20,7 +20,7 @@ package:
 
 functions:
   core-api:
-    handler: dist/apps/core/lambda.handler
+    handler: dist/lambda.handler
     events:
       - http:
           cors: true
