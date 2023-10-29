@@ -13,8 +13,8 @@ plugins:
 package:
   exclude:
     - .git/**
-    - apps/**
-    - libs/**
+    - src/**
+    - test/**
     - deployment/**
     - README.md
 
